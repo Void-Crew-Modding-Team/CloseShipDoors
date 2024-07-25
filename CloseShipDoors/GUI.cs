@@ -5,24 +5,11 @@ namespace CloseShipDoors
 {
     internal class GUI : ModSettingsMenu
     {
-        private static string delayString = Configs.delayConfig.Value.ToString();
-        private static readonly string defaultValue = Configs.delayConfig.DefaultValue.ToString();
-
         public override string Name() => "Close Ship Doors";
 
         public override void Draw()
         {
-            if (GUITools.DrawTextField("Delay (ms)", ref delayString, defaultValue))
-            {
-                if (int.TryParse(delayString, out var delay))
-                {
-                    Configs.delayConfig.Value = delay;
-                }
-                else
-                {
-                    delayString = Configs.delayConfig.Value.ToString();
-                }
-            }
+            GUITools.DrawTextField("Delay (ms)", ref Configs.delayConfig);
             if (GUITools.DrawCheckbox("Include interior doors", ref Configs.interiorDoorsConfig))
             {
                 AbstractDoorPatch.CloseAllDoors();

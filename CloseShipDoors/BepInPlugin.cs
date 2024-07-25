@@ -9,7 +9,7 @@ namespace CloseShipDoors
     {
         internal const string PLUGIN_GUID = "id107.closeshipdoors";
         internal const string PLUGIN_NAME = "CloseShipDoors";
-        internal const string PLUGIN_VERSION = "0.0.0";
+        internal const string PLUGIN_VERSION = "0.0.1";
     }
 
     [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]

@@ -17,12 +17,12 @@ namespace CloseShipDoors
 
             if (__instance is not AirlockDoor && Configs.interiorDoorsConfig.Value)
             {
-                Tools.DelayDo(() => __instance.SetOpen(false), Configs.delayConfig.Value);
+                Tools.DelayDoUnique(__instance, () => __instance.SetOpen(false), Configs.delayConfig.Value);
             }
 
             if (__instance is AirlockDoor && Configs.airlockDoorsConfig.Value)
             {
-                Tools.DelayDo(() => __instance.SetOpen(false), Configs.delayConfig.Value + 500);
+                Tools.DelayDoUnique(__instance, () => __instance.SetOpen(false), Configs.delayConfig.Value + 1000);
             }
         }
 
